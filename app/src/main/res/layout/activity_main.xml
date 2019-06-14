@@ -24,12 +24,13 @@
 
         <!-- middle section (body) -->
         <RelativeLayout
+            android:id="@+id/relLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/relLayout2"
-            android:layout_below="@+id/relLayout1">
+            android:layout_below="@+id/relLayout1"
+            android:layout_marginTop="-82dp">
 
-            <include layout="@layout/layout_center_viewpager"/>
+            <include layout="@layout/layout_center_viewpager" />
 
         </RelativeLayout>
 
