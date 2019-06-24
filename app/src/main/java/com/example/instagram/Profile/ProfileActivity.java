@@ -15,6 +15,7 @@ import android.widget.ProgressBar;
 
 import com.example.instagram.R;
 import com.example.instagram.utils.BottomNavigationViewHelper;
+import com.example.instagram.utils.UniversalImageLoader;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -23,6 +24,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private Context mContext = ProfileActivity.this;
     private ProgressBar mProgressBar;
+    private ImageView profilePhoto;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,14 +32,28 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         Log.d(TAG, "onCreate: started");
 
-        mProgressBar = (ProgressBar) findViewById(R.id.profileProgressBar);
-        mProgressBar.setVisibility(View.GONE);
-
         setupBottomNavigationView();
         setupToolBar();
+        setupActivityWidgets();
+        setProfileImage();
 
     }
 
+    private void setProfileImage(){
+        Log.d(TAG, "setProfileImage: settings profile photo.");
+        String imgURL = "www.androidcentral.com/sites/androidcentral.com/files/styles/xlarge/public/article_images/2016/08/ac-lloyd.jpg?itok=bb72IeLf";
+        UniversalImageLoader.setImage(imgURL, profilePhoto, mProgressBar, "https://");
+    }
+
+    private void setupActivityWidgets(){
+        mProgressBar = (ProgressBar) findViewById(R.id.profileProgressBar);
+        mProgressBar.setVisibility(View.GONE);
+        profilePhoto = (ImageView) findViewById(R.id.profile_photo);
+    }
+
+    /**
+     * Resposible for setting up the profie toolbar
+     */
     private void setupToolBar(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.profileToolBar);
         setSupportActionBar(toolbar);

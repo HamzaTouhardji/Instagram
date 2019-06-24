@@ -12,7 +12,9 @@ import android.view.MenuItem;
 import com.example.instagram.R;
 import com.example.instagram.utils.BottomNavigationViewHelper;
 import com.example.instagram.utils.SectionsPagesAdapter;
+import com.example.instagram.utils.UniversalImageLoader;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -26,8 +28,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate: starting.");
 
+        initImageLoader();
+
         setupBottomNavigationView();
         setupViewPage();
+
+    }
+
+    private void initImageLoader(){
+        UniversalImageLoader universalImageLoader = new UniversalImageLoader(mContext);
+        ImageLoader.getInstance().init(universalImageLoader.getConfig());
     }
 
     /**
