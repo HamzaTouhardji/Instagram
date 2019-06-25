@@ -45,4 +45,9 @@ dependencies {
 
     //Universal image Loader
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+
+    //firebase
+    implementation 'com.google.firebase:firebase-core:16.0.9'
 }
+
+    apply plugin: 'com.google.gms.google-services'
