@@ -41,7 +41,7 @@ public class EditProfileFragment extends Fragment {
 
     private void setProfileImage(){
         Log.d(TAG, "setProfileImage: setting profile image.");
-        String imgURL = "www.google.com/search?q=image&client=ubuntu&hs=zwT&channel=fs&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjZ4-y1joDjAhUKQ0EAHb7zA1YQ_AUIECgB&biw=1541&bih=779#imgrc=CJwabmfmxl2ySM:";
+        String imgURL = "www.androidcentral.com/sites/androidcentral.com/files/styles/xlarge/public/article_images/2016/08/ac-lloyd.jpg?itok=bb72IeLf";
         UniversalImageLoader.setImage(imgURL, mProfilePhoto, null, "https://");
 
     }
